@@ -28,18 +28,8 @@ function formatDay(timestamp) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   return days[day];
 }
-
-     
-
-function getForecast(coordinates){
-let apiKey = "1d2d7ae3cef5d0f29cee6f2f8551ecdf";
-let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-axios.get(apiUrl).then(displayForecast);
-
-}
-
-function displayTemperature(response) {
-  console.log(response);
+  function displayTemperature(response) {
+  
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let countryElement = document.querySelector("#country");

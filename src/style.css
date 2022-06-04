@@ -37,7 +37,7 @@ li:first-letter {
   max-width: 600px;
   margin: 30px auto;
   background: transparent;
-  background-color: rgb(177, 172, 172);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .weather-app {
