@@ -29,10 +29,12 @@ function formatDay(timestamp) {
   return days[day];
 }
   function displayTemperature(response) {
+    console.log(response);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let countryElement = document.querySelector("#country");
   let descriptionElement = document.querySelector("#description");
+  let feelElement = document.querySelector("#feel");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
@@ -45,8 +47,10 @@ function formatDay(timestamp) {
   cityElement.innerHTML = response.data.name;
   countryElement.innerHTML = response.data.sys.country;
   descriptionElement.innerHTML = response.data.weather[0].description;
+  feelElement.innerHTML = Math.round(response.data.main.feels_like);
   humidityElement.innerHTML = Math.round(response.data.main.humidity);
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
  
   iconElement.setAttribute(

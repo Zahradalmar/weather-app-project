@@ -39,7 +39,10 @@
             </div>
           </form>
           <div class="overview">
-            <h1 id="city"><span id="country"></span></h1>
+            <h1>
+              <span id="city"></span>,
+              <span id="country"></span>
+            </h1>
             <ul>
               <li>Last updated: <span id="date"></span></li>
               <li id="description"></li>
@@ -65,6 +68,11 @@
             </div>
             <div class="col-6">
               <ul>
+                <li>
+                  Feels like:<span class="feel">
+                    <span id="feel"></span>°C</span
+                  >
+                </li>
                 <li>Humidity: <span id="humidity"></span>%</li>
                 <li>Wind: <span id="wind"></span> m/h</li>
               </ul>
