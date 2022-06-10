@@ -1,12 +1,12 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url("https://source.unsplash.com/1600x900/?nature,day,night");
+  background-image: url("https://source.unsplash.com/random/?city");
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
 }
 h1 {
-  color: #878787;
+  color: #ffff;
   font-size: 24px;
   font-weight: 100;
   line-height: 28px;
@@ -23,7 +23,7 @@ li {
   margin: 0;
   padding: 0;
 
-  color: rgb(135, 135, 135);
+  color: #ffff;
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
@@ -37,13 +37,13 @@ li:first-letter {
   max-width: 600px;
   margin: 30px auto;
   background: transparent;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(70, 68, 68, 0.4);
 }
 
 .weather-app {
   padding: 20px;
   border: 1px solid #dadde1;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 .overview {
@@ -57,7 +57,7 @@ li:first-letter {
 }
 
 .weather-temperature strong {
-  color: rgb(33, 33, 33);
+  color: #ffff;
   font-size: 64px;
   line-height: 1;
   font-weight: 400;
@@ -70,7 +70,7 @@ li:first-letter {
 }
 
 .weather-temperature .active {
-  color: rgb(33, 33, 33);
+  color: #ffff;
   cursor: default;
 }
 
@@ -81,7 +81,7 @@ li:first-letter {
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
-  color: #000;
+  color: #ffff;
 }
 
 .weather-forecast-date {
