@@ -1,14 +1,11 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-
+  let amPm = hours >= 12 ? "pm" : "am";
+  hours = hours % 12 + 8;
+  hours = hours ? hours : 12;
   let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
+  minutes = minutes < 10 ? "0" + minutes : minutes;
 
   let days = [
     "Sunday",
@@ -20,7 +17,7 @@ function formatDate(timestamp) {
     "Saturday"
   ];
   let day = days[date.getDay()];
-  return `${day} ${hours}: ${minutes}`;
+  return `${day} ${hours}: ${minutes + " " + amPm}`;
 }
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -104,8 +101,10 @@ function getForecast(coordinates) {
   getForecast(response.data.coord);
 }
 function search(city) {
+  
   let apiKey = "1d2d7ae3cef5d0f29cee6f2f8551ecdf";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
   axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -138,10 +137,9 @@ let celsiusTemperature = null;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
 
 let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
 
 search("Mogadishu");
